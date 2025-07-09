@@ -11,7 +11,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 logger = logging.getLogger('Model_building')
 logger.setLevel('DEBUG')
 
-console_handler = logger.StreamHandler()
+console_handler = logging.StreamHandler()
 console_handler.setLevel('DEBUG')
 
 os.makedirs('logs', exist_ok=True)

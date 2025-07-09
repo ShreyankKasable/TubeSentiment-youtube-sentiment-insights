@@ -13,8 +13,6 @@ import seaborn as sns
 import json
 from mlflow.models import infer_signature
 
-from src.data.data_ingestion import file_handler
-
 # logging configuration
 logger = logging.getLogger('model_evaluation')
 logger.setLevel('DEBUG')
@@ -124,7 +122,7 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
-    mlflow.set_tracking_uri("http://ec2-3-84-223-136.compute-1.amazonaws.com:5000/")
+    mlflow.set_tracking_uri("http://ec2-13-222-231-78.compute-1.amazonaws.com:5000/")
 
     mlflow.set_experiment('dvc-pipeline-runs')
 
@@ -194,7 +192,7 @@ def main():
 
         except Exception as e:
             logger.error(f"Failed to complete model evaluation: {e}")
-            print(f"Error: {e}")
+            print(f"Errors: {e}")
 
 
 if __name__ == '__main__':
